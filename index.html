@@ -25,8 +25,9 @@ body{background:#FAF6F0;color:#333333;font-family:'Lora',Georgia,serif;font-size
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1A1008;border-bottom:2px solid #C8A96E;}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-logo{font-family:‘Playfair Display SC’,serif;font-weight:700;font-size:1.1rem;color:#FAF6F0;letter-spacing:.05em;text-decoration:none;}
-.nav-logo span{color:#C8A96E;}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
+.nav-logo img{height:36px;width:auto;mix-blend-mode:screen;filter:brightness(1.1);}
+.nav-logo-text{font-family:‘Playfair Display SC’,Georgia,serif;font-size:.82rem;font-weight:700;color:#FAF6F0;letter-spacing:.12em;font-style:normal;text-transform:uppercase;}
 .nav-links{display:flex;gap:0;list-style:none;}
 .nav-links a{display:block;padding:0 1rem;height:60px;line-height:60px;color:#FAF6F0;text-decoration:none;font-family:‘Lora’,serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;transition:color .2s,background .2s;}
 .nav-links a:hover,.nav-links a.active{color:#C8A96E;background:rgba(200,169,110,.08);}
@@ -200,7 +201,10 @@ section{padding:3rem 1.25rem;}
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#" onclick="showPage('home',this)"><span>CWRA</span> &nbsp;&middot;&nbsp; The Cocoa Works</a>
+    <a class="nav-logo" href="#" onclick="showPage('home',this)">
+      <img src="IMG_1292.png" alt="CWRA">
+      <span class="nav-logo-text">The Cocoa Works</span>
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#" onclick="showPage('home',this)" class="active" data-page="home">Home</a></li>
@@ -419,7 +423,17 @@ section{padding:3rem 1.25rem;}
       <div class="doc-list">
         <div class="doc-item"><div class="doc-icon">PDF</div><div class="doc-info"><div class="doc-title">Letter to Urban Bubble &mdash; March 2026</div><div class="doc-desc">Formal introduction letter setting out working arrangements requested and flagging five outstanding matters.</div></div><div class="doc-audience">Urban Bubble</div></div>
       </div>
-    </div>
+
+```
+  <div class="bar-header" style="margin-top:2.5rem;">Full document archive</div>
+  <p style="font-size:.88rem;color:#333333;line-height:1.7;margin-bottom:1rem;">Browse and preview all CWRA documents directly below. Click any file to open a preview, or visit <a href="https://drive.google.com/drive/folders/1h8qSa1aUqEyQMdhpXDI3oCsV-Cx9P8dL" target="_blank" style="color:#6B3A1F;">Google Drive</a> to open the full folder in a new tab.</p>
+  <div style="border:1.5px solid #C8A96E;overflow:hidden;">
+    <iframe src="https://drive.google.com/embeddedfolderview?id=1h8qSa1aUqEyQMdhpXDI3oCsV-Cx9P8dL#list" style="width:100%;height:500px;border:none;background:#FAF6F0;" title="CWRA Document Archive" allow="autoplay"></iframe>
+  </div>
+  <p style="font-size:.78rem;color:#6B3A1F;margin-top:.75rem;">All documents are view-only. To request a copy, email <a href="mailto:cocoaworksra@gmail.com" style="color:#6B3A1F;">cocoaworksra@gmail.com</a>.</p>
+</div>
+```
+
   </section>
 </div>
 
