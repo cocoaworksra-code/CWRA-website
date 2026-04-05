@@ -51,7 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:#1A1008;border-b
 .hero-divider{width:60px;height:2px;background:#C8A96E;margin:0 auto 2rem;}
 .hero-intro{font-size:1.1rem;color:rgba(250,246,240,.8);max-width:600px;margin:0 auto 3rem;line-height:1.8;}
 .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(200,169,110,.6);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;animation:bob 2s ease-in-out infinite;}
+.scroll-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(200,169,110,.6);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;animation:bob 2s ease-in-out infinite;pointer-events:none;}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
 
 /* BUTTONS */
@@ -217,7 +217,11 @@ section{padding:3rem 1.25rem;}
 
 <div id="page-home" class="page active">
   <div class="hero">
-    <div class="hero-content">
+    <div style="background:#FAF6F0;width:100%;display:flex;justify-content:center;align-items:center;padding:2rem 2rem 1.5rem;">
+      <img src="IMG_1205.jpeg" alt="The Cocoa Works Residents' Association" style="max-width:480px;width:100%;height:auto;display:block;">
+    </div>
+    <div style="height:2px;background:#C8A96E;width:100%;"></div>
+    <div class="hero-content" style="padding-bottom:5rem;">
       <p class="hero-eyebrow">The Cocoa Works, York</p>
       <div class="hero-rule"><div class="hero-rule-dot"></div></div>
       <h1>Your home.<br><em>Your voice.</em></h1>
@@ -258,22 +262,43 @@ section{padding:3rem 1.25rem;}
 
   <section>
     <div class="section-inner">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <p class="section-label">About the CWRA</p>
+      <h2 class="section-title">Residents working together since 2025</h2>
+      <div class="caramel-rule"></div>
+      <p class="section-lead">The Cocoa Works Residents' Association grew out of a campaign to fix serious failures in bike shed security. Residents from Mint, Cream, and Almond came together, held the developer to account, and secured a &pound;15,440 investment in security upgrades. That experience showed what organised residents can achieve &mdash; and why a permanent, structured group is needed.</p>
+      <button class="btn btn-primary" onclick="showPage('about')" style="margin-bottom:3rem;">Read our full story</button>
+      <div class="bar-header">What we do</div>
+      <div class="dark-card-grid">
+        <div class="dark-card"><div class="dark-card-num">01</div><h3>Hold management to account</h3><p>We meet regularly with Urban Bubble and raise issues on your behalf.</p></div>
+        <div class="dark-card"><div class="dark-card-num">02</div><h3>Scrutinise the service charge</h3><p>We review how your money is spent and challenge poor value.</p></div>
+        <div class="dark-card"><div class="dark-card-num">03</div><h3>Build community</h3><p>We connect residents across all three blocks and celebrate this building's heritage.</p></div>
+        <div class="dark-card"><div class="dark-card-num">04</div><h3>Work toward formal recognition</h3><p>We are building toward a legally recognised Residents' Association.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="section-inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
         <div>
-          <p class="section-label">About the CWRA</p>
-          <h2 class="section-title">Residents working together since 2025</h2>
+          <p class="section-label" style="color:#C8A96E;">What we are</p>
           <div class="caramel-rule"></div>
-          <p class="section-lead">The Cocoa Works Residents' Association grew out of a campaign to fix serious failures in bike shed security. Residents from Mint, Cream, and Almond came together, held the developer to account, and secured a &pound;15,440 investment in security upgrades. That experience showed what organised residents can achieve &mdash; and why a permanent, structured group is needed.</p>
-          <button class="btn btn-primary" onclick="showPage('about')">Read our full story</button>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.75rem;">
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:#C8A96E;margin-top:.1rem;">&#10003;</span>An informal, self-elected group representing residents' interests</li>
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:#C8A96E;margin-top:.1rem;">&#10003;</span>A conduit between residents and Urban Bubble / Clarion/Latimer</li>
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:#C8A96E;margin-top:.1rem;">&#10003;</span>A group that raises communal issues and holds management to account</li>
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:#C8A96E;margin-top:.1rem;">&#10003;</span>A first step toward a legally recognised Residents' Association</li>
+          </ul>
         </div>
         <div>
-          <div class="bar-header">What we do</div>
-          <div class="dark-card-grid">
-            <div class="dark-card"><div class="dark-card-num">01</div><h3>Hold management to account</h3><p>We meet regularly with Urban Bubble and raise issues on your behalf.</p></div>
-            <div class="dark-card"><div class="dark-card-num">02</div><h3>Scrutinise the service charge</h3><p>We review how your money is spent and challenge poor value.</p></div>
-            <div class="dark-card"><div class="dark-card-num">03</div><h3>Build community</h3><p>We connect residents across all three blocks and celebrate this building's heritage.</p></div>
-            <div class="dark-card"><div class="dark-card-num">04</div><h3>Work toward formal recognition</h3><p>We are building toward a legally recognised Residents' Association.</p></div>
-          </div>
+          <p class="section-label" style="color:#C8A96E;">What we are not</p>
+          <div class="caramel-rule"></div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.75rem;">
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:rgba(200,169,110,.5);margin-top:.1rem;">&#10007;</span>A formal legal body &mdash; we cannot compel Urban Bubble or Clarion to act</li>
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:rgba(200,169,110,.5);margin-top:.1rem;">&#10007;</span>A complaints service for individual flat defects</li>
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:rgba(200,169,110,.5);margin-top:.1rem;">&#10007;</span>A replacement for residents contacting Urban Bubble directly</li>
+            <li style="display:flex;gap:.75rem;align-items:start;font-size:.9rem;color:rgba(250,246,240,.8);"><span style="color:rgba(200,169,110,.5);margin-top:.1rem;">&#10007;</span>Responsible for service charge decisions &mdash; we scrutinise, challenge, and advise</li>
+          </ul>
         </div>
       </div>
     </div>
