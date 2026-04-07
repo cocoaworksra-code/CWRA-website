@@ -641,24 +641,33 @@ function loadSubstackFeed(){
         return;
       }
       list.innerHTML='';
-      data.items.forEach(function(item){
+      list.style.background='none';
+      list.style.border='none';
+      list.style.gap='1.5rem';
+      list.style.display='flex';
+      list.style.flexDirection='column';
+      data.items.forEach(function(item,i){
         var date=new Date(item.pubDate).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-        var div=document.createElement('a');
-        div.href=item.link;
-        div.target='_blank';
-        div.className='doc-item';
-        div.style.flexDirection='column';
-        div.style.alignItems='flex-start';
-        div.style.gap='.4rem';
-        div.innerHTML=
-          '<div style="display:flex;align-items:center;justify-content:space-between;width:100%;">'+
-            '<div class="doc-title">'+item.title+'</div>'+
-            '<div class="doc-audience">'+date+'</div>'+
+        var excerpt=(item.description||'').replace(/<[^>]+>/g,'').trim().substring(0,200);
+        var card=document.createElement('a');
+        card.href=item.link;
+        card.target='_blank';
+        card.style.cssText='display:block;text-decoration:none;background:#FAF6F0;border:1.5px solid #C8A96E;overflow:hidden;transition:background .2s;';
+        card.onmouseover=function(){this.style.background='#F0EAE0';};
+        card.onmouseout=function(){this.style.background='#FAF6F0';};
+        var num=String(i+1).padStart(2,'0');
+        card.innerHTML=
+          '<div style="background:#3B1F0A;padding:.6rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #C8A96E;">'+
+            '<span style="font-family:\'Playfair Display\',serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C8A96E;">'+num+'</span>'+
+            '<span style="font-family:\'Lora\',serif;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,240,.6);">'+date+'</span>'+
           '</div>'+
-          '<div class="doc-desc" style="max-width:680px;">'+
-            (item.description||'').replace(/<[^>]+>/g,'').substring(0,160)+'&hellip;'+
+          '<div style="padding:1.5rem;">'+
+            '<div style="font-family:\'Playfair Display\',serif;font-size:1.15rem;font-weight:700;color:#1A1008;margin-bottom:.6rem;line-height:1.3;">'+item.title+'</div>'+
+            '<div style="width:40px;height:2px;background:#C8A96E;margin-bottom:.85rem;"></div>'+
+            '<div style="font-family:\'Lora\',serif;font-size:.88rem;color:#333333;line-height:1.7;margin-bottom:1.25rem;">'+excerpt+'&hellip;</div>'+
+            '<span style="font-family:\'Lora\',serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#C8A96E;">Read more &rarr;</span>'+
           '</div>';
-        list.appendChild(div);
+        list.appendChild(card);
       });
       list.dataset.loaded='1';
     })
